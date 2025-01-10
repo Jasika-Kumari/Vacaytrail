@@ -6,6 +6,7 @@ import heroImg02 from '../assets/images/hero-img02.jpg'
 import heroVideo from '../assets/images/hero-video.mp4'
 import Subtitle from '../shared/Subtitle'
 import worldImg from '../assets/images/world.png'
+import SearchBar from '../shared/SearchBar'
 const Home = () => {
   return (
     <>
@@ -28,6 +29,7 @@ const Home = () => {
             <video src={heroVideo} alt="" controls/></div></Col>
             <Col lg='2'><div className="hero__img-box mt-5">
             <img src={heroImg02} alt=""/></div></Col>
+            <SearchBar/>
         </Row>
       </Container>
     </section>
