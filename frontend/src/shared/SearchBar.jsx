@@ -1,7 +1,13 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import './search-bar.css'
 import {Col,Form,FormGroup} from 'reactstrap'
 const SearchBar = () => {
+ const locationRef=useRef('')
+ const distanceRef=useRef(0)
+ const maxGroupSizeRef=useRef(0)
+ const searchHandler=()=>{
+    const location=locationRef.current.value
+ }
   return (
     <Col lg='12'>
         <div className="search__bar">
@@ -33,6 +39,9 @@ const SearchBar = () => {
                     <input type="number" placeholder='0'/>
                 </div>
             </FormGroup>
+            <span className="search__icon" type='submit'>
+            <i class="ri-search-line"></i>
+            </span>
           </Form>
       
         </div>
