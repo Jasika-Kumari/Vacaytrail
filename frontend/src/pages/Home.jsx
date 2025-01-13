@@ -11,6 +11,8 @@ import ServiceList from '../services/ServiceList'
 import FeaturedTourList from '../Featured-tours/FeaturedTourList'
 import experienceImg from  '../assets/images/experience.png'
 import MasonaryImageGallery from '../component/Image-gallery/MasonaryImageGallery'
+import Testimonial from '../component/Testimonial/Testimonial'
+import Newsletter from '../shared/Newsletter'
 const Home = () => {
   return (
     <>
@@ -83,8 +85,8 @@ const Home = () => {
             </div>
           </div>
           </Col>
-          <Col lg="6">
-          </Col>
+          {/* <Col lg="6">
+          </Col> */}
           <Col lg='6'>
           <div className='experience__img'>
             <img src={experienceImg} alt=""/>
@@ -108,6 +110,20 @@ const Home = () => {
         </Row>
       </Container>
     </section>
+    <section>
+      <Container>
+        <Row>
+          <Col lg='12'>
+          <Subtitle subtitle={'Fans Love'}/>
+          <h2 className="testimonial__title">what our fans say about us</h2>
+          </Col>
+          <Col lg='12'>
+           <Testimonial/>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+    <Newsletter/>
     </>
       
    
