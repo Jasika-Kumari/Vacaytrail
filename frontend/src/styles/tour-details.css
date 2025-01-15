@@ -3,7 +3,7 @@
     border-radius: .5rem;
     margin-bottom: 2.5rem;
 }
-.tour__info{
+.tour__info, .tour__reviews{
     
     border-radius: .5rem;
     border:1px solid rgb(229,231,235);
@@ -38,4 +38,31 @@
     line-height: 30px;
     font-size: 1rem;
     color: var(--text-color);
+}
+.rating__group span{
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    color:var(--secondary-color);
+    cursor: pointer;
+}
+.tour__reviews h4{
+    margin-bottom: 3rem;
+}
+.review__input{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   padding: 0.7rem;
+   border-radius: 2rem;
+   border: 1px solid var(--secondary-color); 
+}
+.review__input input{
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+}
+.review__input input:focus{
+    outline: none; 
 }
