@@ -21,7 +21,7 @@ export const updateTour=async(req,res)=>{
         const updatedTour=await Tour.findByIdAndUpdate(id,{
             $set:req.body
            },{new:true})
-           res.status(200).json({success:true, message:'Successfully updated', data:'updatedTour'});   
+           res.status(200).json({success:true, message:'Successfully updated', data:updatedTour});   
      
     }catch(err){
         res.status(500).json({success:false, message:'failed to update'});
@@ -42,7 +42,7 @@ export const getSingleTour=async(req,res)=>{
     const id=req.params.id;
     try{
           const tour=await Tour.findById(id);
-           res.status(200).json({success:true, message:'Successfully deleted',data:'tour'});   
+           res.status(200).json({success:true, message:'Successfully deleted',data:tour});   
      
     }catch(err){
         res.status(404).json({success:false, message:'not found'});
@@ -73,5 +73,25 @@ export const getTourBySearch=async(req,res)=>{
        res.status(200).json({success:true, message:'Successful',data:tours});
     }catch(err){
         res.status(404).json({success:false, message:'not found'});
+    }
+}
+//get featured tour
+export const getFeaturedTour=async(req,res)=>{
+    
+    
+    try{
+       const tours=await Tour.find({featured:true}).limit(8);
+       res.status(200).json({success:true, message:'Successful',data:tours})
+    }catch(err){
+        res.status(404).json({success:false, message:'not found'});
+    }
+};
+//get tour counts
+export const getTourCount=async(req,res)=>{
+    try{
+       const tourCount=await Tour.estimatedDocumentCount();
+       res.status(200).json({success:true,data:tourCount});
+    }catch(err){
+       res.status(500).json({success:false,message:"failed to fetch"});
     }
 }
